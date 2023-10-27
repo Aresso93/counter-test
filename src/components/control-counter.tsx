@@ -1,13 +1,28 @@
+import { useControls } from "./hooks/useControls"
+
 export function ControlCounter(){
+
+    const controls = useControls()
+
     return (
         <div>
-            <button>
+            <button onClick={()=>{
+                controls.actions.reset
+            }}>
             Resetta
             </button>
-            <button>
+
+            <button
+            onClick={()=>{
+                controls.actions.addition
+            }}>
             Aumenta
             </button>
-            <button>
+
+            <button
+            onClick={()=>{
+                controls.actions.subtraction
+            }}>
             Diminuisci
             </button>
         </div>
