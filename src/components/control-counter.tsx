@@ -1,27 +1,33 @@
 import { useControls } from "./hooks/useControls"
 
-export function ControlCounter(){
+export interface ControlProps{
+    actions: {
+        reset: () => void;
+        addition: VoidFunction;
+        subtraction: VoidFunction;
+    }
+}
 
-    const controls = useControls()
+export function ControlCounter(props:ControlProps){
 
     return (
         <div>
             <button onClick={()=>{
-                controls.actions.reset
+                props.actions.reset()
             }}>
             Resetta
             </button>
 
             <button
             onClick={()=>{
-                controls.actions.addition
+                props.actions.addition()
             }}>
             Aumenta
             </button>
 
             <button
             onClick={()=>{
-                controls.actions.subtraction
+               props.actions.subtraction()
             }}>
             Diminuisci
             </button>

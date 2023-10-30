@@ -22,7 +22,8 @@ export function useControls(){
 
     return {
         actions: 
-        {reset, 
+        {
+        reset, 
         addition, 
         subtraction,
         },

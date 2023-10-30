@@ -9,10 +9,12 @@ export function Counter(){
     return (
         <>  
         <DisplayCounter
-        value={0}
+        value={controls.state.counter}
         />
 
-        <ControlCounter/>
+        <ControlCounter
+        actions={controls.actions}
+        />
         </>
     )
 
